@@ -1,0 +1,15 @@
+{
+  "name": "cm3070-final-project",
+  "version": "1.0.0",
+  "description": "PrivaSeeFinal Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rowan Clark",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3",
+    "socket.io": "^4.7.4"
+  }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrivaSee Web Dashboard</title>
+    <meta name="author" content="Rowan Clark">
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="icon" href="cctv-camera-icon-security-camera-icon-free-vector.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Maven+Pro&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+
+</head>
+<body>
+    <header>
+        <h1>PrivaSee</h1>
+        <h2>Interactive Web Dashboard</h2>
+    </header>
+    
+    <main>
+        <form id="configForm">
+            <!-- Depricated -->
+            <!-- <label for="webcam">Select Webcam:</label>
+            <select id="webcam" name="webcam"> -->
+                <!-- Available Webcams -->
+            <!-- </select> -->
+            <!-- <label for="audio">Audio:</label>
+                <select id="audio" name="audio">
+                    <option value="no" selected>No</option>
+                    <option value="yes">Yes</option>
+                </select> -->
+
+            <label for="format">Video Codec:</label>
+            <select id="format" name="format">
+                <option value="x264">X264 [Default]</option>
+                <option value="avc1">AVC1 [Alternate]</option>
+                <option value="hevc">HEVC [Advanced]</option>
+                <option value="xvid">XVID [Legacy]</option>
+            </select>
+            
+            
+            <label for="length">Video Length:</label>
+            <!-- <input type="number" id="length" name="length" min="1" value="10"> -->
+            <input type="range" id="length" name="length" min="5" max="20" value="10" oninput="this.nextElementSibling.value = this.value">
+            <output>10</output> seconds
+            <button type="submit">Save Settings</button>
+        </form>
+        
+        <!-- Video playback element -->
+        <div class="video-container">
+            <video id="videoPlayback" controls>
+                Your browser does not support the video tag.
+            </video>
+            <div id="videoMetadata" class="video-metadata"></div>
+            <button id="deleteVideoBtn" onclick="deleteCurrentVideo()">Delete Video</button>
+        </div>
+        <div id="videoGallery"></div>
+    </main>
+    <footer>
+        <p>© 2024 PrivaSee Indoor Motion Detection</p>
+    </footer>
+    
+    <!-- Depricated -->
+    <!-- <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <video id="videoPlayback" controls></video>
+        </div>
+    </div> -->
+
+    <script src="script.js"></script>
+    
+
+</body>
+</html>
